@@ -1,75 +1,129 @@
+:root,
+[data-theme="light"] {
+    /* ====== BACKGROUNDS & SURFACES ====== */
+    --background: #faf9f8;
+    --background-muted: #f4f3f2;
+    --sidebar-bg: #f7f7f6;
+    --card-bg: #ffffff;
+    --card-border: #e6e6e6;
+    --input-bg: #ffffff;
+    --input-border: #ddd;
 
-@theme {
-    /* Light mode pastel colors */
-    --color-primary-50: #f0f4ff;
-    --color-primary-100: #dce5ff;
-    --color-primary-200: #c1d3ff;
-    --color-primary-300: #96b6ff;
-    --color-primary-400: #698fff;
-    --color-primary-500: #4169e8;
-    --color-primary-600: #2a47dd;
-    --color-primary-700: #2235c2;
-    --color-primary-800: #202e9d;
-    --color-primary-900: #202b7d;
-    --color-primary-950: #161b4b;
+    /* ====== TEXT ====== */
+    --text: #222;
+    --text-muted: #555;
+    --text-inverse: #fff;
 
-    --color-success-50: #f0fdf5;
-    --color-success-100: #dcfce8;
-    --color-success-200: #bbf7d1;
-    --color-success-300: #86efac;
-    --color-success-400: #4ade80;
-    --color-success-500: #22c55e;
-    --color-success-600: #16a34a;
-    --color-success-700: #15803d;
-    --color-success-800: #166534;
-    --color-success-900: #14532d;
-    --color-success-950: #052e16;
+    /* ====== PRIMARY (Pastel Indigo-Blue) ====== */
+    --primary-50:  #f5f7ff;
+    --primary-100: #e8edff;
+    --primary-200: #d3dcff;
+    --primary-300: #b7c4ff;
+    --primary-400: #97aaff;
+    --primary-500: #758fff;
+    --primary-600: #5a74e6;
+    --primary-700: #465cb8;
+    --primary-800: #34448a;
+    --primary-900: #222d5c;
+    --primary-950: #121836;
 
-    --color-warning-50: #fefce8;
-    --color-warning-100: #fef9c3;
-    --color-warning-200: #fef08a;
-    --color-warning-300: #fde047;
-    --color-warning-400: #facc15;
-    --color-warning-500: #eab308;
-    --color-warning-600: #ca8a04;
-    --color-warning-700: #a16207;
-    --color-warning-800: #854d0e;
-    --color-warning-900: #713f12;
-    --color-warning-950: #422006;
+    /* Filament relies on these shorthand tokens */
+    --primary: var(--primary-500);
+    --primary-foreground: var(--text-inverse);
 
-    --color-danger-50: #fef2f2;
-    --color-danger-100: #fee2e2;
-    --color-danger-200: #fecaca;
-    --color-danger-300: #fca5a5;
-    --color-danger-400: #f87171;
-    --color-danger-500: #ef4444;
-    --color-danger-600: #dc2626;
-    --color-danger-700: #b91c1c;
-    --color-danger-800: #991b1b;
-    --color-danger-900: #7f1d1d;
-    --color-danger-950: #450a0a;
+    /* ====== SUCCESS (Mint Green) ====== */
+    --success-50: #f3fbf7;
+    --success-100: #d6f5e4;
+    --success-200: #adecc9;
+    --success-300: #82e2ae;
+    --success-400: #56d795;
+    --success-500: #2bcb7b;
+    --success-600: #23a565;
+    --success-700: #1b7f4f;
+    --success-800: #125938;
+    --success-900: #093321;
+    --success: var(--success-500);
 
-    --color-info-50: #f0f9ff;
-    --color-info-100: #e0f2fe;
-    --color-info-200: #bae6fd;
-    --color-info-300: #7dd3fc;
-    --color-info-400: #38bdf8;
-    --color-info-500: #0ea5e9;
-    --color-info-600: #0284c7;
-    --color-info-700: #0369a1;
-    --color-info-800: #075985;
-    --color-info-900: #0c4a6e;
-    --color-info-950: #082f49;
+    /* ====== DANGER (Soft Coral) ====== */
+    --danger-50: #fff5f5;
+    --danger-100: #ffe1e1;
+    --danger-200: #ffc0c0;
+    --danger-300: #ff9999;
+    --danger-400: #ff6f6f;
+    --danger-500: #ff4a4a;
+    --danger-600: #e03a3a;
+    --danger-700: #b92f2f;
+    --danger-800: #8a2222;
+    --danger-900: #5c1616;
+    --danger: var(--danger-500);
 
-    --color-gray-50: #f8fafc;
-    --color-gray-100: #f1f5f9;
-    --color-gray-200: #e2e8f0;
-    --color-gray-300: #cbd5e1;
-    --color-gray-400: #94a3b8;
-    --color-gray-500: #64748b;
-    --color-gray-600: #475569;
-    --color-gray-700: #334155;
-    --color-gray-800: #1e293b;
-    --color-gray-900: #0f172a;
-    --color-gray-950: #020617;
+    /* ====== WARNING (Pastel Amber) ====== */
+    --warning-50: #fff9ec;
+    --warning-100: #fff2d4;
+    --warning-200: #ffe4a8;
+    --warning-300: #ffd276;
+    --warning-400: #ffc24a;
+    --warning-500: #ffb01f;
+    --warning-600: #e29412;
+    --warning-700: #b3730d;
+    --warning-800: #855608;
+    --warning-900: #573904;
+    --warning: var(--warning-500);
+
+    /* ====== INFO (Sky Teal) ====== */
+    --info-50: #f3fbfd;
+    --info-100: #d5f1f9;
+    --info-200: #ace2f2;
+    --info-300: #7ad1ea;
+    --info-400: #49bfe1;
+    --info-500: #1aadd8;
+    --info-600: #118eb5;
+    --info-700: #0c6f8c;
+    --info-800: #084f63;
+    --info-900: #042f3b;
+    --info: var(--info-500);
+
+    /* ====== GRAYS ====== */
+    --gray-50: #faf9f8;
+    --gray-100: #f3f2f1;
+    --gray-200: #e8e7e6;
+    --gray-300: #dad9d8;
+    --gray-400: #bcbab8;
+    --gray-500: #9d9b99;
+    --gray-600: #7e7c7a;
+    --gray-700: #5f5d5b;
+    --gray-800: #3f3e3c;
+    --gray-900: #1f1e1c;
+
+    /* ====== FILAMENT INTERNAL TOKENS ====== */
+    --filament-color-primary-50:  var(--primary-50);
+    --filament-color-primary-100: var(--primary-100);
+    --filament-color-primary-200: var(--primary-200);
+    --filament-color-primary-300: var(--primary-300);
+    --filament-color-primary-400: var(--primary-400);
+    --filament-color-primary-500: var(--primary-500);
+    --filament-color-primary-600: var(--primary-600);
+    --filament-color-primary-700: var(--primary-700);
+    --filament-color-primary-800: var(--primary-800);
+    --filament-color-primary-900: var(--primary-900);
+    --filament-color-primary-950: var(--primary-950);
+
+    /* Button + accent */
+    --filament-accent-color: var(--primary-500);
+    --filament-accent-color-hover: var(--primary-600);
+    --filament-accent-color-focus: var(--primary-400);
+
+    /* Card styling */
+    --filament-card-background-color: var(--card-bg);
+    --filament-card-border-color: var(--card-border);
+
+    /* Sidebar */
+    --filament-sidebar-background-color: var(--sidebar-bg);
+    --filament-sidebar-item-active-color: var(--primary-100);
+    --filament-sidebar-item-active-icon-color: var(--primary-600);
+
+    /* Inputs & Borders */
+    --filament-input-background-color: var(--input-bg);
+    --filament-input-border-color: var(--input-border);
+    --filament-input-focus-color: var(--primary-400);
 }

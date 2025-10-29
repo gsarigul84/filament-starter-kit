@@ -109,23 +109,21 @@ class AdminPanelProvider extends PanelProvider
                     ->navigationGroupLabel(__('translations.content')),
             ])
             ->navigationGroups([
-
-
-                NavigationGroup::make('content')
-                    ->label(__('content'))
-                    ->collapsed(),
-                NavigationGroup::make('site_front')
-                    ->label(__('translations.site_front'))
-                    ->collapsed(),
-                NavigationGroup::make('user_management')
-                    ->label(__('translations.user_management'))
-                    ->collapsed(),
-                NavigationGroup::make('system')
-                    ->label(__('translations.system'))
-                    ->collapsed(),
-                NavigationGroup::make('modules')
-                    ->label(__('translations.modules'))
-                    ->collapsed(),
+//                NavigationGroup::make('m_content')
+//                    ->label(__('translations.content'))
+//                    ->collapsed(),
+//                NavigationGroup::make('s_site_front')
+//                    ->label(__('translations.site_front'))
+//                    ->collapsed(),
+//                NavigationGroup::make('u_user_management')
+//                    ->label(__('translations.user_management'))
+//                    ->collapsed(),
+//                NavigationGroup::make('x_system')
+//                    ->label(__('translations.system'))
+//                    ->collapsed(),
+//                NavigationGroup::make('z_modules')
+//                    ->label(__('translations.modules'))
+//                    ->collapsed(),
 
             ]);
     }
