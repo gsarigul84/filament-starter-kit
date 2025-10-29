@@ -14,6 +14,14 @@ class MenuItemResource extends BaseMenuItemResource
     {
         return __('translations.site_front');
     }
+    public static function getPages(): array
+    {
+        return [
+            'index'  => BaseMenuItemResource\Pages\ListMenuItems::route('/'),
+            'create' => BaseMenuItemResource\Pages\CreateMenuItem::route('/create'),
+            'edit'   => BaseMenuItemResource\Pages\EditMenuItem::route('/{record}/edit'),
+        ];
+    }
 
 
 }
