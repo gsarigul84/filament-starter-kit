@@ -18,6 +18,7 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationBuilder;
 use Filament\Navigation\NavigationGroup;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -31,6 +32,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
+use LaraZeus\Sky\Filament\Resources\SkyResource;
 use LaraZeus\Sky\SkyPlugin;
 use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
 use Leandrocfe\FilamentApexCharts\FilamentApexChartsPlugin;
@@ -109,22 +111,23 @@ class AdminPanelProvider extends PanelProvider
                     ->navigationGroupLabel(__('translations.content')),
             ])
             ->navigationGroups([
-//                NavigationGroup::make('m_content')
-//                    ->label(__('translations.content'))
-//                    ->collapsed(),
-//                NavigationGroup::make('s_site_front')
-//                    ->label(__('translations.site_front'))
-//                    ->collapsed(),
-//                NavigationGroup::make('u_user_management')
-//                    ->label(__('translations.user_management'))
-//                    ->collapsed(),
-//                NavigationGroup::make('x_system')
-//                    ->label(__('translations.system'))
-//                    ->collapsed(),
-//                NavigationGroup::make('z_modules')
-//                    ->label(__('translations.modules'))
-//                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label(__('translations.content'))
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label(__('translations.user_management'))
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label(__('translations.site_front'))
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label(__('translations.system'))
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label(__('translations.modules'))
+                    ->collapsed(),
 
             ]);
+
     }
 }
