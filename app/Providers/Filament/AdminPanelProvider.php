@@ -2,8 +2,9 @@
 
 namespace App\Providers\Filament;
 
-use Alizharb\FilamentModuleManager\FilamentModuleManagerPlugin;
 use App\Filament\Pages\Dashboard;
+use App\FilamentOverrides\Plugins\FilamentModuleManagerPlugin;
+use App\FilamentOverrides\Plugins\FilamentThemeManagerPlugin;
 use App\FilamentOverrides\SiteFront\MenuItemResource;
 use App\FilamentOverrides\SiteFront\MenuResource;
 use App\FilamentOverrides\System\BackupsPage;
@@ -12,6 +13,7 @@ use Awcodes\Recently\RecentlyPlugin;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Alizharb\FilamentThemesManager\FilamentThemesManagerPlugin;
 use Biostate\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Coolsam\Modules\ModulesPlugin;
 use CraftForge\FilamentLanguageSwitcher\FilamentLanguageSwitcherPlugin;
 use DiscoveryDesign\FilamentGaze\FilamentGazePlugin;
 use Filament\Http\Middleware\Authenticate;
@@ -23,6 +25,7 @@ use Filament\Navigation\NavigationGroup;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\Support\Enums\Width;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -58,6 +61,7 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Dashboard::class,
             ])
+            ->maxContentWidth(Width::Full)
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 AccountWidget::class,
@@ -78,7 +82,11 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->viteTheme('resources/css/filament/admin/theme.css')
-            ->plugins([
+            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
+            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->discoverClusters(in: app_path('Filament/Clusters'), for: 'App\\Filament\\Clusters')
+
+        ->plugins([
                 FilamentShieldPlugin::make()
                     ->navigationLabel(__('translations.users.permission_management'))
                     ->navigationGroup(__('translations.user_management')),
@@ -87,7 +95,7 @@ class AdminPanelProvider extends PanelProvider
                     ['code' => 'en', 'name' => 'English', 'flag' => 'gb'],
                     ['code' => 'tr', 'name' => 'Türkçe', 'flag' => 'tr'],
                 ]),
-                FilamentThemesManagerPlugin::make(),
+                FilamentThemeManagerPlugin::make(),
                 FilamentModuleManagerPlugin::make(),
                 BreezyCore::make()->myProfile(
                     shouldRegisterUserMenu: true,
@@ -100,8 +108,6 @@ class AdminPanelProvider extends PanelProvider
                 RecentlyPlugin::make(),
                 FilamentGazePlugin::make(),
                 RenewPasswordPlugin::make(),
-//                KnowledgeBaseCompanionPlugin::make()
-//                ->knowledgeBasePanelId('kb'),
                 FilamentApexChartsPlugin::make(),
                 FilamentSpatieLaravelBackupPlugin::make()
                     ->usingPage(BackupsPage::class),
@@ -109,6 +115,7 @@ class AdminPanelProvider extends PanelProvider
                 SpatieTranslatablePlugin::make()->defaultLocales(config('scriptmancer.locales')),
                 SkyPlugin::make()
                     ->navigationGroupLabel(__('translations.content')),
+                ModulesPlugin::make()
             ])
             ->navigationGroups([
                 NavigationGroup::make()

@@ -20,6 +20,7 @@
         "bezhansalleh/filament-shield": "^4.0",
         "biostate/filament-menu-builder": "^4.0",
         "coolsam/flatpickr": "^5.0",
+        "coolsam/modules": "^5.0",
         "craft-forge/filament-language-switcher": "^1.0",
         "discoverydesign/filament-gaze": "^2.0",
         "dotswan/filament-map-picker": "^2.0",
@@ -107,6 +108,11 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "merge-plugin": {
+            "include": [
+                "Modules/*/composer.json"
+            ]
         }
     },
     "config": {
